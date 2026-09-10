@@ -25,6 +25,14 @@ npm run docs:artifact
 
 This creates `vitepress-site-artifact.tar.gz`, which you can download and extract to check locally.
 
+## Build a combined Markdown artifact
+
+```bash
+npm run docs:master-artifact
+```
+
+This scans all `docs/**/*.md` files, strips frontmatter, prefixes inline SVG IDs and matching HTML anchors per source file, and writes the merged result to `dist/master-combined.md`.
+
 ## Single-file per-page HTML export
 
 ```bash
