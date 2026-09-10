@@ -9,7 +9,7 @@
     "docs:preview": "vitepress preview docs --host",
     "docs:artifact": "npm run docs:build && tar -czf vitepress-site-artifact.tar.gz -C docs/.vitepress dist",
     "docs:master-artifact": "node scripts/build-single-artifact.mjs",
-    "docs:single-html-attempt": "VITEPRESS_SINGLE_FILE=true vitepress build docs && rm -rf vitepress-single && cp -r docs/.vitepress/dist vitepress-single"
+    "docs:single-html-attempt": "node scripts/build-single-html-attempt.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

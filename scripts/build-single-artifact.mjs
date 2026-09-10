@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 import matter from 'gray-matter'
 import { glob } from 'glob'
 import { optimize } from 'svgo'
@@ -98,5 +99,7 @@ export async function buildSingleArtifact(patterns = defaultPatterns) {
   return outputFile
 }
 
-const artifactPath = await buildSingleArtifact()
-console.log(`Wrote ${path.relative(repoRoot, artifactPath)}`)
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const artifactPath = await buildSingleArtifact()
+  console.log(`Wrote ${path.relative(repoRoot, artifactPath)}`)
+}

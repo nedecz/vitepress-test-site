@@ -33,28 +33,21 @@ npm run docs:master-artifact
 
 This scans all `docs/**/*.md` files, strips frontmatter, prefixes inline SVG IDs and matching HTML anchors per source file, and writes the merged result to `dist/master-combined.md`.
 
-## Single-file per-page HTML export
+## Single-file HTML export
 
 ```bash
 npm run docs:single-html-attempt
 ```
 
-This enables `vite-plugin-singlefile` during build and exports all pages to `vitepress-single/`.
-Each `.html` file has its CSS and JS fully inlined — no separate asset files are needed.
+This builds one combined Markdown page, renders it through VitePress with `vite-plugin-singlefile`, and writes a standalone `vitepress-single/index.html`.
+The output is intended as an experimental single-file offline export of the site content.
 
 ```
 vitepress-single/
   index.html
-  guide/
-    getting-started/index.html
-    markdown/index.html
-  examples/
-    mermaid-and-svg/index.html
-    markdown-showcase/index.html
 ```
 
-You can open any page directly in a browser without a local server.
-Inter-page navigation works when pages are opened from the same folder.
+You can open `index.html` directly in a browser without a local server.
 
 This folder is also uploaded as a downloadable artifact (`vitepress-single-html`) on every CI run.
 
