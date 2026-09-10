@@ -1,5 +1,7 @@
 # Markdown Tips
 
+For a broader reference page, see [Markdown Showcase](/examples/markdown-showcase).
+
 ## Code block
 ```ts
 export const hello = 'world'
