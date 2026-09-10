@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
-      - name: Build single-file per-page export
+      - name: Build single-file HTML export
         run: npm run docs:single-html-attempt
       - name: Upload single-file HTML artifact
         uses: actions/upload-artifact@v4
