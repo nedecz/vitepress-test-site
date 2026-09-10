@@ -1,0 +1,11 @@
+/* Optional tweaks for diagram spacing and SVG responsiveness */
+.mermaid {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.VPDoc img,
+.VPDoc svg {
+  max-width: 100%;
+  height: auto;
+}
