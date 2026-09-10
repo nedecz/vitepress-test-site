@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(
+  defineConfig({
   title: 'My VitePress Site',
   description: 'Markdown + SVG + Mermaid',
   base: '/vitepress-test-site/',
@@ -22,7 +24,8 @@ export default defineConfig({
       {
         text: 'Examples',
         items: [
-          { text: 'Mermaid + SVG', link: '/examples/mermaid-and-svg' }
+          { text: 'Mermaid + SVG', link: '/examples/mermaid-and-svg' },
+          { text: 'Markdown Showcase', link: '/examples/markdown-showcase' }
         ]
       }
     ],
@@ -32,4 +35,8 @@ export default defineConfig({
   markdown: {
     lineNumbers: true
   }
-})
+}),
+  {
+    mermaid: {}
+  }
+)
