@@ -12,6 +12,7 @@
     "docs:single-html-attempt": "VITEPRESS_SINGLE_FILE=true vitepress build docs && rm -rf vitepress-single && cp -r docs/.vitepress/dist vitepress-single"
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "glob": "^13.0.6",
     "gray-matter": "^4.0.3",
     "mermaid": "^11.4.1",
@@ -23,6 +24,6 @@
   },
   "overrides": {
     "esbuild": "^0.28.2",
-    "vite": "^8.3.0"
+    "vite": "^7.3.6"
   }
 }
