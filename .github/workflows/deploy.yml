@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vitepress-single-html
-          path: vitepress-single/
+          path: dist/vitepress-single.html
 
   deploy:
     environment:

@@ -39,7 +39,7 @@ This scans all `docs/**/*.md` files, strips frontmatter, prefixes inline SVG IDs
 npm run docs:single-html-attempt
 ```
 
-This builds one combined Markdown page, renders it through VitePress with `vite-plugin-singlefile`, and writes a single-page export to `vitepress-single/index.html`.
+This builds one combined Markdown page, renders it through VitePress with `vite-plugin-singlefile`, writes a single-page export to `vitepress-single/index.html`, and copies the downloadable artifact to `dist/vitepress-single.html`.
 The output is intended as an experimental offline export of the site content.
 
 ```
@@ -49,7 +49,7 @@ vitepress-single/
 
 You can open `index.html` directly in a browser without a local server.
 
-This folder is also uploaded as a downloadable artifact (`vitepress-single-html`) on every CI run.
+That copied `dist/vitepress-single.html` file is also uploaded as the downloadable artifact (`vitepress-single-html`) on every CI run.
 
 ## Deploy to GitHub Pages
 
