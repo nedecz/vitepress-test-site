@@ -25,24 +25,30 @@ npm run docs:artifact
 
 This creates `vitepress-site-artifact.tar.gz`, which you can download and extract to check locally.
 
-## About single HTML output
-
-VitePress builds a multi-file static site (HTML + CSS + JS + assets) by design.
-So for the full docs site, a single standalone HTML file is not supported.
-
-## Experimental single HTML attempt (homepage)
+## Single-file per-page HTML export
 
 ```bash
 npm run docs:single-html-attempt
 ```
 
-This enables `vite-plugin-singlefile` during build and exports:
-- `vitepress-single.html` (root page only)
+This enables `vite-plugin-singlefile` during build and exports all pages to `vitepress-single/`.
+Each `.html` file has its CSS and JS fully inlined — no separate asset files are needed.
 
-Important limitations:
-- This is experimental and only practical for the homepage snapshot.
-- The file is not fully standalone for VitePress and may still rely on `docs/.vitepress/dist/assets`.
-- The full multi-page docs site still cannot be reliably shipped as one HTML file with this plugin.
+```
+vitepress-single/
+  index.html
+  guide/
+    getting-started/index.html
+    markdown/index.html
+  examples/
+    mermaid-and-svg/index.html
+    markdown-showcase/index.html
+```
+
+You can open any page directly in a browser without a local server.
+Inter-page navigation works when pages are opened from the same folder.
+
+This folder is also uploaded as a downloadable artifact (`vitepress-single-html`) on every CI run.
 
 ## Deploy to GitHub Pages
 
