@@ -8,7 +8,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs --host",
     "docs:artifact": "npm run docs:build && tar -czf vitepress-site-artifact.tar.gz -C docs/.vitepress dist",
-    "docs:single-html-attempt": "VITEPRESS_SINGLE_FILE=true vitepress build docs && cp docs/.vitepress/dist/index.html vitepress-single.html"
+    "docs:single-html-attempt": "VITEPRESS_SINGLE_FILE=true vitepress build docs && rm -rf vitepress-single && cp -r docs/.vitepress/dist vitepress-single"
   },
   "devDependencies": {
     "mermaid": "^11.4.1",
