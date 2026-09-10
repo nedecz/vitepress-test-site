@@ -39,8 +39,8 @@ This scans all `docs/**/*.md` files, strips frontmatter, prefixes inline SVG IDs
 npm run docs:single-html-attempt
 ```
 
-This builds one combined Markdown page, renders it through VitePress with `vite-plugin-singlefile`, and writes a standalone `vitepress-single/index.html`.
-The output is intended as an experimental single-file offline export of the site content.
+This builds one combined Markdown page, renders it through VitePress with `vite-plugin-singlefile`, and writes a single-page export to `vitepress-single/index.html`.
+The output is intended as an experimental offline export of the site content.
 
 ```
 vitepress-single/
