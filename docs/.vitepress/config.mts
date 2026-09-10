@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'My VitePress Site',
   description: 'Markdown + SVG + Mermaid',
+  base: '/vitepress-test-site/',
   cleanUrls: true,
 
   themeConfig: {
