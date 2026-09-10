@@ -1,11 +1,35 @@
 /* Optional tweaks for diagram spacing and SVG responsiveness */
 .mermaid {
   margin: 1rem 0;
-  overflow-x: auto;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  min-height: 200px;
+  user-select: none;
+}
+
+.mermaid svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mermaid::after {
+  content: 'Scroll to zoom · Drag to pan · Double-click to reset';
+  display: block;
+  font-size: 0.72rem;
+  color: var(--vp-c-text-3);
+  text-align: center;
+  padding: 2px 0 4px;
 }
 
 .VPDoc img,
 .VPDoc svg {
   max-width: 100%;
   height: auto;
+}
+
+.mermaid svg {
+  max-width: unset;
+  height: unset;
 }
