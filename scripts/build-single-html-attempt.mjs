@@ -11,6 +11,7 @@ const tempDocsRoot = path.join(tempRoot, 'docs')
 const tempConfigRoot = path.join(tempDocsRoot, '.vitepress')
 const tempPublicRoot = path.join(tempDocsRoot, 'public')
 const outputRoot = path.join(repoRoot, 'vitepress-single')
+const artifactFile = path.join(repoRoot, 'dist', 'vitepress-single.html')
 
 function normalizeAssetPath(assetPath) {
   return assetPath.replace(/^\/+/, '')
@@ -102,7 +103,10 @@ async function buildSingleHtmlSite() {
 
   await fs.rm(outputRoot, { recursive: true, force: true })
   await fs.cp(path.join(tempConfigRoot, 'dist'), outputRoot, { recursive: true })
+  await fs.mkdir(path.dirname(artifactFile), { recursive: true })
+  await fs.copyFile(path.join(outputRoot, 'index.html'), artifactFile)
 }
 
 await buildSingleHtmlSite()
 console.log(`Wrote ${path.relative(repoRoot, outputRoot)}`)
+console.log(`Wrote ${path.relative(repoRoot, artifactFile)}`)
